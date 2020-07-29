@@ -2,7 +2,7 @@ from flask import request, Response
 from flask_restplus import Resource
 
 from ..util.dto import UserDto
-from ..services.controller_service import get_all, save_new_item
+from ..services.controller_service import get_all, save_new_item, get_a_user
 from app.main.models.user import User
 import datetime
 from flask import jsonify
@@ -36,16 +36,16 @@ class UserList(Resource):
         return Response(status=201)
 
 
-# @api.route('/<public_id>')
-# @api.param('public_id', 'The User identifier')
-# @api.response(404, 'User not found.')
-# class User(Resource):
-#     @api.doc('get a user')
-#     @api.marshal_with(_user)
-#     def get(self, public_id):
-#         """get a user given its identifier"""
-#         user = get_a_user(public_id)
-#         if not user:
-#             api.abort(404)
-#         else:
-#             return user
+@api.route('/<public_id>')
+@api.param('public_id', 'The User identifier')
+@api.response(404, 'User not found.')
+class UserWithId(Resource):
+    @api.doc('get a user')
+    @api.marshal_with(_user)
+    def get(self, public_id):
+        """get a user given its identifier"""
+        user = get_a_user(User, public_id)
+        if not user:
+            api.abort(404)
+        else:
+            return user
