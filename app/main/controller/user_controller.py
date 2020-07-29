@@ -1,11 +1,10 @@
 from flask import request, Response
 from flask_restplus import Resource
 
-from ..util.dto import UserDto
-from ..services.controller_service import get_all, save_new_item, get_a_user
+from app.main.utils.dto import UserDto
+from app.main.services.controller_service import get_all, save_new_item, get_a_user
 from app.main.models.user import User
 import datetime
-from flask import jsonify
 
 
 api = UserDto.api

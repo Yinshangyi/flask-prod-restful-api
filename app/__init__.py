@@ -2,11 +2,11 @@
 
 from flask_restplus import Api
 from flask import Blueprint
-from .main.controller.user_controller import api as user_ns
-from .main.controller.post_controller import api as post_ns
+from app.main.controller.user_controller import api as user_ns
+from app.main.controller.post_controller import api as post_ns
 
 
-blueprint = Blueprint('api', __name__)
+blueprint = Blueprint('api', __name__, url_prefix='/api')
 
 api = Api(blueprint,
           title='FLASK RESTPLUS API BOILER-PLATE WITH JWT',
