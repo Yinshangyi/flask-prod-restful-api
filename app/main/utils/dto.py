@@ -17,3 +17,11 @@ class UserDto:
         'password': fields.String(required=True, description='user password'),
         'posts': fields.Nested(PostDto.post),
     })
+
+
+class TokenDto:
+    api = Namespace('token', description='JWT Token generation')
+    user_login_info = api.model('token', {
+        'username': fields.String(required=True, description='username of the user'),
+        'password': fields.String(required=True, description='password of the user')
+    })

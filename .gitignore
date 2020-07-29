@@ -1,11 +1,14 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
+# Mac
+.DS_Store
+
 # Pycharm generated files
 .idea/
 
 # Virtual environment
-venv/
+flask-api-env/
 
 # Migrations
 migrations/
