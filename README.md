@@ -1,6 +1,5 @@
 # Flask Restful API with JWT Authentification
-This project provides a good structure for a production-grade API in Python. 
-It uses SQLAlchemy for the database ORM and Flask Restful for the API routing and controller.   
+This project provides a good structure for a production-grade API in Python.    
 
 ## API features
 This API features the following:
@@ -8,4 +7,6 @@ This API features the following:
 - A generated documentation with Swagger
 - Parameters and JSON validation
 - JWT Authentification
+- Flask Blueprints and Namespace for a better project structure
 
+<img width="1109" alt="documentation" src="https://user-images.githubusercontent.com/30729570/88868849-90923780-d211-11ea-97b2-dcd8a8870f54.png">
